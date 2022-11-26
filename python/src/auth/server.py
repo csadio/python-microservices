@@ -46,7 +46,7 @@ def createJWT(username, secret, isAdmin):
     algorithm="HS256"
     )
 
-@server.route("/validate", method=["POST"])
+@server.route("/validate", methods=["POST"])
 def validateJWT():
     encoded_jwt = request.headers["Authorization"]
     if not encoded_jwt:
